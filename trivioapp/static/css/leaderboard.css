@@ -1,0 +1,37 @@
+.info-box{
+	display: block;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.top-icon{
+	min-height: 7vh;
+}
+
+.title-bar{
+	min-height: 5vh;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	width: 70vw;
+	margin-left: 5vw;
+}
+
+.rankings-area{
+	background-color:#e3e8e3; 
+	height: 100%;
+	display: block;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+
+.space-area{
+    height:1vh;
+}
+
+.ranking-item{
+	width: 70vw;
+	margin-left: 5vw;
+}

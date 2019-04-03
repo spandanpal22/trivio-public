@@ -1,0 +1,357 @@
+body, div, dl, dt, dd, ul, ol, li, h1, p, section, header, footer, nav {
+	margin: 0;
+	padding: 0;
+}
+section, header, footer, nav { display: block; }
+li { list-style: none; }
+
+html,
+body { width: 100%; height: 100%; }
+
+body {
+    position: relative;
+    font-size: 12px;
+    font-family: Myriad, Helvetica, Arial, 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro', 'Meiryo', 'メイリオ', sans-serif;
+    background-color: #f4efef;
+    background-image: -webkit-linear-gradient(top, #fff, #f4efef);
+    background-image:    -moz-linear-gradient(top, #fff, #f4efef);
+    background-image:     -ms-linear-gradient(top, #fff, #f4efef);
+    background-image:      -o-linear-gradient(top, #fff, #f4efef);
+    background-image:         linear-gradient(top, #fff, #f4efef);
+    background-repeat: none;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+a { text-decoration: none; }
+
+/* ----------------------------------
+    Navigation
+---------------------------------- */
+
+nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    z-index: 100;
+    overflow: hidden;
+    padding-top: 24px;  
+}
+
+nav > div {
+    position: relative;
+    margin: 0 auto;
+    max-width : 800px;
+}
+
+nav ul,
+nav li { display: inline-block; }
+nav li {
+    overflow: hidden;
+    margin: 0 18px;
+    vertical-align: bottom;
+}
+
+nav a {
+    color: #fff;
+    display: block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+        -ms-border-radius: 24px;
+         -o-border-radius: 24px;
+            border-radius: 24px;
+    background-color: #202020;
+}
+
+/* Contents */
+
+nav li.vol1 a:hover,
+nav li.vol1.active a {
+    color: #fff;
+    background-color: rgba(3, 180, 204, .7);
+}
+nav li.vol2 a:hover,
+nav li.vol2.active a {
+    color: #fff;
+    background-color: rgba(255, 0, 255, .7);
+}
+nav li.vol3 a:hover,
+nav li.vol3.active a {
+    color: #202020;
+    background-color: rgba(255, 255, 0, .7);
+}
+
+nav li.logo a { position: relative; }
+nav li.logo a:hover,
+nav li.logo.active a {
+    background-color: rgba(255, 255, 255, .7);
+}
+nav li.logo a img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+nav li.logo.active img,
+nav li.logo a:hover img {
+    top: -48px;
+}
+
+/* Use javascript */
+
+nav.transition-enable {
+    -webkit-transition-property: top;
+       -moz-transition-property: top;
+        -ms-transition-property: top;
+         -o-transition-property: top;
+            transition-property: top;
+    -webkit-transition-duration: .2s;        
+       -moz-transition-duration: .2s;
+        -ms-transition-duration: .2s;    
+         -o-transition-duration: .2s;
+            transition-duration: .2s;
+    -webkit-transition-timing-function: cubic-bezier(.12, .51, .60, .87);        
+       -moz-transition-timing-function: cubic-bezier(.12, .51, .60, .87);
+        -ms-transition-timing-function: cubic-bezier(.12, .51, .60, .87);    
+         -o-transition-timing-function: cubic-bezier(.12, .51, .60, .87);
+            transition-timing-function: cubic-bezier(.12, .51, .60, .87);
+}
+
+nav.hide { top: -82px; }
+
+
+/* ----------------------------------
+    Content
+---------------------------------- */
+
+/* Container */
+
+#container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+    -webkit-perspective-origin: 50% 125px;        
+            perspective-origin: 50% 125px;
+    overflow: hidden;
+    
+    /* 高さ調節用 */
+    -webkit-transition: height 0.3s linear;
+            transition: height 0.3s linear;
+}
+
+/* Contents */
+
+#contents {
+    display: none; /* 最初は非表示に */
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: translateZ(-500px);
+            transform: translateZ(-500px);
+    overflow: visible;
+}
+
+/* Page */
+
+#contents > section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 0 30px;
+    color: #202020;
+    line-height: 1.75;
+    /*-webkit-filter: blur(0);*/
+}
+
+/* Page header */
+
+#contents > section > header {
+    padding: 30px 40px 0 40px;
+    margin: 0 0 15px;
+}
+
+#contents > section > header > p.label {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-size: 11px;
+    line-height: 1em;
+    color: #fff;
+    -webkit-border-radius: 30px;
+       -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+         -o-border-radius: 30px;
+            border-radius: 30px;
+}
+
+#contents > section > header > h1 {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+/* Page inner */
+
+#contents > section > section { padding: 0 40px 0 40px; }
+#contents > section > section p { margin: 20px 0; }
+ 
+#contents > section > section li,
+#contents > section > section dd { margin-left: 25px; }
+
+/* Page pager */
+
+#contents > section .pager { padding: 0 40px 20px 40px; }
+#contents > section .pager li { margin: 0; }
+#contents > section .pager li.prev { float: left; }
+#contents > section .pager li.next { float: right; }
+
+/* Page section */
+
+#contents > section > section { margin: 0 0 35px; }
+#contents > section > section > h1 {
+    padding: 5px 0 5px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Page elements */
+
+#contents > section h1,
+#contents > section p,
+#contents > section li,
+#contents > section dt,
+#contents > section dd {
+    -webkit-transition-property: -webkit-transform, opacity, color;
+            transition-property:         transform, opacity, color;
+    -webkit-transition-duration: 1.5s; 
+            transition-duration: 1.5s;
+    /* バウンドするような動き, Safari では超過が効かない模様 */
+    -webkit-transition-timing-function: cubic-bezier(0.610, -0.220, 0.555, 1.105); 
+            transition-timing-function: cubic-bezier(0.610, -0.220, 0.555, 1.105);
+}
+
+#contents > section,
+#contents > section section {
+    -webkit-transform-style: preserve-3d;
+}
+
+/* Use javascript */
+
+#contents > .transition-enable {
+    -webkit-transition-property: -webkit-transform, opacity;
+            transition-property:         transform, opacity;
+    -webkit-transition-duration: 1.5s; 
+            transition-duration: 1.5s;
+    -webkit-transition-timing-function: cubic-bezier(0, .99, .17, 1); 
+            transition-timing-function: cubic-bezier(0, .99, .17, 1);
+}
+
+#contents > .animation-enable {
+    -webkit-animation: rot 10s linear infinite;
+            animation: rot 10s linear infinite;
+}
+
+
+/* ----------------------------------
+    Issue
+---------------------------------- */
+
+/* Inactive content */
+section.content.inactive {
+    -webkit-animation: rot 60s linear infinite;
+            animation: rot 60s linear infinite;
+    /*-webkit-filter: blur(2px) !important;*/
+}
+
+/*
+    Javascript で .content セレクタを指定した要素の id にはサフィックスを追加するので指定もサフィックスをつけて行う
+    #qtop -> #qtop-content
+*/
+
+/* Top */
+section#qtop-content {
+    color: #202020;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Top logo */
+section#qtop-content > header {
+    width: 180px;
+    height: 110px;
+    margin: 10px auto;
+}
+
+/* Top navigation */
+section#qtop-content ul,
+section#qtop-content ul li { display: inline-block; }
+section#qtop-content ul { margin: 25px 0; }
+section#qtop-content ul li { margin: 0 10px; }
+section#qtop-content ul li a {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: none;
+    width: 47px;
+    height: 47px;
+    line-height: 47px;
+    display: inline-block;
+    background-color: #202020;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+        -ms-border-radius: 24px;
+         -o-border-radius: 24px;
+            border-radius: 24px;
+}
+section#qtop-content ul li.vol1 a:hover { background-color: rgba(3, 180, 204, .7); }
+section#qtop-content ul li.vol2 a:hover { background-color: rgba(255, 0, 255, .7); }
+section#qtop-content ul li.vol3 a { background-color: #606060; }
+section#qtop-content ul li.vol3 a:hover {
+    color: #000;
+    background-color: rgba(255, 255, 0, .7);
+}
+
+/* Vol 1 */
+section#vol1-content > header > p.label,
+section#vol1-content > section > h1 { background-color: rgba(3, 180, 204, .7); }
+section#vol1-content a { color: rgba(1, 146, 165, .7); }
+section#vol1-content.inactive { color: rgba(3, 180, 204, .7); }
+
+/* Vol 2 */
+section#vol2-content > header > p.label,
+section#vol2-content > section > h1 {
+    background-color: rgba(255, 0, 255, .7);
+}
+section#vol2-content a { color: rgba(165, 0, 165, .7); }
+section#vol2-content.inactive { color: rgba(255, 0, 255, .7); }
+
+/* Vol 3 */
+section#vol3-content > header > p.label,
+section#vol3-content > section > h1 {
+    color: #333 !important;
+    background-color: rgba(255, 255, 0, .7);
+}
+section#vol3-content a { color: rgba(165, 165, 0, .7); }
+section#vol3-content.inactive { color: rgba(255, 255, 0, .7); }
+
+/* Animation */
+@-webkit-keyframes rot {
+    from { -webkit-transform: rotateY(0deg); }
+    to   { -webkit-transform: rotateY(360deg); }
+}
+
+@keyframes rot {
+    from { -moz-transform: rotateY(0deg); }
+    to   { -moz-transform: rotateY(360deg); }
+}
